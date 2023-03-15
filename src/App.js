@@ -1,24 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+
+import {useState } from "react";
+import classes from "./App.module.css";
+import Definition from "./components/Definition";
+
+import Header from "./components/Header";
+import Search from "./components/Search";
+import SectionSeparator from "./components/SectionSeparator";
+import Source from "./components/Source";
+import Word from "./components/Word";
 
 function App() {
+  const [datas, setDatas] = useState([]);
+
+  const launchRequest = (enteredWord) => {
+    if (enteredWord !== '') {
+      fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${enteredWord}`)
+        .then((header) => header.json())
+        .then((res) => {
+          setDatas(res);
+        });
+    } else {
+      console.log("no word");
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+        <div className={classes.main}>
+          <Header />
+          <Search launchReq={launchRequest} />
+          <Word datas={datas} />
+          <SectionSeparator datas={datas} />
+          <Definition datas={datas} />
+          <SectionSeparator datas={datas} />
+          <Definition datas={datas} />
+          <SectionSeparator />
+          {/* <Source datas={datas}/> */}
+        </div>
   );
 }
 

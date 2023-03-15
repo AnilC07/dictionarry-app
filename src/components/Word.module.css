@@ -1,0 +1,23 @@
+.section__word{
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+.word{
+    font-size: 5rem;
+}
+
+.phonetic{
+    font-size: 3rem;
+}
+
+.sound{
+
+}
+
+.sound img{
+    width: 100%;
+}
+
+audio[controls]{opacity:1}

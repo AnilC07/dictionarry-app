@@ -1,0 +1,61 @@
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: white;
+}
+
+.logo{
+width:70px;
+}
+
+.logo img{
+width: 100%;
+display: block;
+}
+
+.daynight{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    cursor: pointer;
+}
+
+.moon,.sun{
+
+}
+
+.moon img,.sun img{
+
+}
+
+.btn{
+width: 50px;
+height: 23px;
+padding: 0px 5px ; 
+
+display: flex;
+align-items: center;
+
+
+border-radius: 15px;
+background: #aaa;
+}
+
+
+
+.indicator{
+width: 16px ;
+height: 16px;
+border-radius: 50%;
+background-color: white;
+
+transition: transform .3s, background-color .1s;
+}
+
+.darkMode{
+    transform: translateX(24px);
+    background-color: black;
+}
