@@ -6,7 +6,7 @@ import Definition from "./components/Definition";
 import Header from "./components/Header";
 import Search from "./components/Search";
 import SectionSeparator from "./components/SectionSeparator";
-import Source from "./components/Source";
+
 import Word from "./components/Word";
 
 function App() {

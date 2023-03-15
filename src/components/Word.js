@@ -1,6 +1,6 @@
 import React from "react";
 
-import play from "../img/controller-play.svg";
+// import play from "../img/controller-play.svg";
 
 import classes from "./Word.module.css";
 
