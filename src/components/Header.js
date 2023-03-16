@@ -1,8 +1,8 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useCallback, useContext, useEffect, useState } from "react";
 
 import cls from "classnames";
 
-import ThemeCtx , {themes, ThemeContext} from "../ThemeCtx";
+import { themes, ThemeContext } from "../ThemeCtx";
 
 import classes from "./Header.module.css";
 
@@ -17,28 +17,27 @@ const Header = () => {
   // change background
   const [darkMode, setDarkMode] = useState(false);
 
-  const context = useContext(ThemeContext)
-  console.log({context})
+  const context = useContext(ThemeContext);
+  console.log({ context });
 
-  const changeDisplayMode = () => {
-    
-              setDarkMode(!darkMode)
-              console.log(ThemeContext)
-              context.changeTheme(darkMode ? themes.dark : themes.light)
-            
-  }
+  const changeDisplayMode = useCallback(() => {
+    setDarkMode(!darkMode);
+    console.log(ThemeContext);
+    context.changeTheme(darkMode ? themes.dark : themes.light);
+  }, [darkMode, context]);
 
-  useEffect(()=>{
-changeDisplayMode()
-console.log('hello')
-  },[displayMode])
-
+  useEffect(() => {
+    changeDisplayMode();
+  }, [displayMode]);
 
   return (
     <div className={classes.header}>
       <div className={classes.logo}>
-      {!darkMode ? <img src={whiteLogo} alt="logo" />:<img src={blackLogo} alt="logo" />}
-        
+        {!darkMode ? (
+          <img src={whiteLogo} alt="logo" />
+        ) : (
+          <img src={blackLogo} alt="logo" />
+        )}
       </div>
 
       <div className={classes.daynight}>
@@ -46,17 +45,14 @@ console.log('hello')
           <img src={sun} alt="sun" />
         </div>
 
+        <div
+          className={classes.btn}
+          onClick={() => setDisplayMode(!displayMode)}
+        >
           <div
-            className={classes.btn}
-            onClick={()=>setDisplayMode(!displayMode)}
-          >
-            <div
-              className={cls(
-                classes.indicator,
-                displayMode && classes.darkMode
-              )}
-            ></div>
-          </div>
+            className={cls(classes.indicator, displayMode && classes.darkMode)}
+          ></div>
+        </div>
 
         <div className={classes.moon}>
           <img src={moon} alt="moon" />

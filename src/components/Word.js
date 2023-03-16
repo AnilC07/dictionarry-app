@@ -7,7 +7,7 @@ import classes from "./Word.module.css";
 const Word = (props) => {
   console.log(props);
 
-  const launchAudio = () => {};
+
 
   return (
     <section className={classes.section__word}>
@@ -18,9 +18,9 @@ const Word = (props) => {
                   <h3 className={classes.phonetic}>{props.datas[0].phonetic}</h3>
 
                 </div>
-                <div className={classes.sound} onClick={launchAudio}>
+                <div className={classes.sound}>
                   {/* <img src={play} alt="play icon" /> */}
-                  {/* <audio controls src={props.datas[0].phonetics[1].audio} /> */}
+                  <audio controls src={props.datas[0].phonetics[0].audio} />
                 </div>
         </>
       ) : (

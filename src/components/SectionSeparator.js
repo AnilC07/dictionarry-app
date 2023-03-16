@@ -8,11 +8,11 @@ const SectionSeparator = (props) => {
     <div className={classes.separator}>
       {props.datas.length > 0 ? (
         <>
-          <h4>name</h4> <span className={classes.trait}></span>
+          <h4>{props.datas[0].meanings[0].partOfSpeech}</h4> <span className={classes.trait}></span>
         </>
       ) : (
         <>
-          <h4>name</h4> <span className={classes.trait}></span>
+          <span className={classes.trait}></span>
         </>
       )}
     </div>

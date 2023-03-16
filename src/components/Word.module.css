@@ -10,11 +10,12 @@ justify-content: space-between;
 
 .phonetic{
     font-size: 3rem;
+    color: blueviolet;
 }
 
-/* .sound{
-
-} */
+.sound audio:focus{
+    outline: none;
+}
 
 .sound img{
     width: 100%;
