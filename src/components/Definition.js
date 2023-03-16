@@ -32,8 +32,8 @@ const Definition = (props) => {
       </div>
       <div className={classes.synonyms}>
         <ListHeading>Synonym : </ListHeading>
-        <ul className={classes.synonym_list}>
-          <li className={classes.synonym_item}>???</li>
+        <ul className={classes.synonyms_list}>
+          <li className={classes.synonyms_item}>???</li>
         </ul>
       </div></>)}
     </section>

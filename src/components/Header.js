@@ -1,26 +1,44 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import cls from "classnames";
 
+import ThemeCtx , {themes, ThemeContext} from "../ThemeCtx";
 
 import classes from "./Header.module.css";
 
-import logo from "../img/book.svg";
+import blackLogo from "../img/blackBook.svg";
+import whiteLogo from "../img/whiteBook.svg";
 import moon from "../img/moon.svg";
 import sun from "../img/light-up.svg";
 
 const Header = () => {
-  const [displayMode, setDisplayMode] = useState(false)
+  // move indicator
+  const [displayMode, setDisplayMode] = useState(false);
+  // change background
+  const [darkMode, setDarkMode] = useState(false);
 
- const setDisplay = () => {
-   setDisplayMode(!displayMode)
+  const context = useContext(ThemeContext)
+  console.log({context})
+
+  const changeDisplayMode = () => {
+    
+              setDarkMode(!darkMode)
+              console.log(ThemeContext)
+              context.changeTheme(darkMode ? themes.dark : themes.light)
+            
   }
+
+  useEffect(()=>{
+changeDisplayMode()
+console.log('hello')
+  },[displayMode])
 
 
   return (
     <div className={classes.header}>
       <div className={classes.logo}>
-        <img src={logo} alt="logo" />
+      {!darkMode ? <img src={whiteLogo} alt="logo" />:<img src={blackLogo} alt="logo" />}
+        
       </div>
 
       <div className={classes.daynight}>
@@ -28,9 +46,18 @@ const Header = () => {
           <img src={sun} alt="sun" />
         </div>
 
-        <div className={classes.btn}  onClick={setDisplay}>
-          <div className={cls(classes.indicator, displayMode && classes.darkMode)}></div>
-        </div>
+          <div
+            className={classes.btn}
+            onClick={()=>setDisplayMode(!displayMode)}
+          >
+            <div
+              className={cls(
+                classes.indicator,
+                displayMode && classes.darkMode
+              )}
+            ></div>
+          </div>
+
         <div className={classes.moon}>
           <img src={moon} alt="moon" />
         </div>

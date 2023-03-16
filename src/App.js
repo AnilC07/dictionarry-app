@@ -1,5 +1,7 @@
+import { useState } from "react";
 
-import {useState } from "react";
+import ThemeCtx from "./ThemeCtx";
+
 import classes from "./App.module.css";
 import Definition from "./components/Definition";
 
@@ -13,7 +15,7 @@ function App() {
   const [datas, setDatas] = useState([]);
 
   const launchRequest = (enteredWord) => {
-    if (enteredWord !== '') {
+    if (enteredWord !== "") {
       fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${enteredWord}`)
         .then((header) => header.json())
         .then((res) => {
@@ -25,17 +27,24 @@ function App() {
   };
 
   return (
-        <div className={classes.main}>
+    <>
+      <div className={classes.main}>
+        <ThemeCtx>
           <Header />
-          <Search launchReq={launchRequest} />
-          <Word datas={datas} />
-          <SectionSeparator datas={datas} />
-          <Definition datas={datas} />
-          <SectionSeparator datas={datas} />
-          <Definition datas={datas} />
-          {/* <SectionSeparator /> */}
-          {/* <Source datas={datas}/> */}
-        </div>
+        </ThemeCtx>
+        <Search launchReq={launchRequest} />
+        <Word datas={datas} />
+        <SectionSeparator datas={datas} />
+        <Definition datas={datas} />
+        {/* <SectionSeparator datas={datas} /> */}
+        {/* <Definition datas={datas} /> */}
+        {/* <SectionSeparator /> */}
+        {/* <Source datas={datas}/> */}
+      </div>
+      <div className="copyright">
+        &copy; {new Date().getFullYear()} Anil CELIK
+      </div>
+    </>
   );
 }
 
