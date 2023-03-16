@@ -20,7 +20,7 @@ const Word = (props) => {
                 </div>
                 <div className={classes.sound} onClick={launchAudio}>
                   {/* <img src={play} alt="play icon" /> */}
-                  <audio controls src={props.datas[0].phonetics[1].audio} />
+                  {/* <audio controls src={props.datas[0].phonetics[1].audio} /> */}
                 </div>
         </>
       ) : (

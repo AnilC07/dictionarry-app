@@ -1,15 +1,22 @@
-import React from 'react'
+import React from "react";
 
-
-import classes from './SectionSeparator.module.css'
-
+import classes from "./SectionSeparator.module.css";
 
 const SectionSeparator = (props) => {
+  console.log(props)
   return (
     <div className={classes.separator}>
-    <h4>name</h4> <span className={classes.trait}></span>
+      {props.datas.length > 0 ? (
+        <>
+          <h4>name</h4> <span className={classes.trait}></span>
+        </>
+      ) : (
+        <>
+          <h4>name</h4> <span className={classes.trait}></span>
+        </>
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default SectionSeparator
+export default SectionSeparator;

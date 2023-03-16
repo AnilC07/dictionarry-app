@@ -33,7 +33,7 @@ function App() {
           <Definition datas={datas} />
           <SectionSeparator datas={datas} />
           <Definition datas={datas} />
-          <SectionSeparator />
+          {/* <SectionSeparator /> */}
           {/* <Source datas={datas}/> */}
         </div>
   );
