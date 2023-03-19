@@ -32,14 +32,6 @@
     outline: none;
 }
 
-.sound img {
-    width: 100%;
-}
-
-audio[controls] {
-    opacity: 1
-}
-
 .error{
     display: auto;
     padding: 1rem;    
@@ -53,6 +45,6 @@ audio[controls] {
 }
 
 
-.sound{
+audio{
     margin-bottom: 1rem;
 }
