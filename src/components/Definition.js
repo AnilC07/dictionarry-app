@@ -38,15 +38,9 @@ const Definition = (props) => {
         <>
           <div className={classes.meaning}>
             <ListHeading>Meaning : </ListHeading>
-            {/* <ul className={classes.list}>
-              <li className={classes.item}>???</li>
-            </ul>*/}
           </div> 
           <div className={classes.synonyms}>
             <ListHeading>Synonym : </ListHeading>
-            {/* <ul className={classes.synonyms_list}>
-              <li className={classes.synonyms_item}>???</li>
-            </ul> */}
           </div>
         </>
       )}

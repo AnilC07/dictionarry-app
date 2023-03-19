@@ -18,11 +18,10 @@ const Header = () => {
   const [darkMode, setDarkMode] = useState(false);
 
   const context = useContext(ThemeContext);
-  console.log({ context });
+
 
   const changeDisplayMode = useCallback(() => {
     setDarkMode(!darkMode);
-    console.log(ThemeContext);
     context.changeTheme(darkMode ? themes.dark : themes.light);
   }, [darkMode, context]);
 

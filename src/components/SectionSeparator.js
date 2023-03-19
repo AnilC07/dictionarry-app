@@ -3,7 +3,6 @@ import React from "react";
 import classes from "./SectionSeparator.module.css";
 
 const SectionSeparator = (props) => {
-  console.log(props)
   return (
     <div className={classes.separator}>
       {props.datas.length > 0 ? (

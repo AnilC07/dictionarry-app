@@ -36,13 +36,9 @@ function App() {
         <Word datas={datas} />
         <SectionSeparator datas={datas} />
         <Definition datas={datas} />
-        {/* <SectionSeparator datas={datas} /> */}
-        {/* <Definition datas={datas} /> */}
-        {/* <SectionSeparator /> */}
-        {/* <Source datas={datas}/> */}
       </div>
       <div className="copyright">
-        &copy; {new Date().getFullYear()} Anil CELIK
+        <p className="copyright__text">&copy; {new Date().getFullYear()} Anil CELIK</p>
       </div>
     </>
   );

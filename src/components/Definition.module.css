@@ -3,8 +3,6 @@ font-size: 1.6rem;
 }
 
 .synonyms{
-    display: inline-flex;
-    align-items: center;
     font-size: 1.6rem;
     }
     
@@ -19,8 +17,8 @@ font-size: 1.6rem;
     flex-wrap: wrap;
     gap: 10px;
     list-style: none;
-    margin-left: 3.5rem;
-    margin-top: 5px;
+
+    margin-top: 3rem;
 }
 
 .synonyms_list .item::after{
