@@ -1,26 +1,53 @@
-.section__word{
-display: flex;
-align-items: center;
-justify-content: space-between;
+.section__word {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.word{
+@media only screen and (max-width: 768px) {
+    .section__word {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+
+        justify-content: space-between;
+    }
+
+    .sound{
+        margin-top: 2rem;
+        align-self: center;
+    }
+}
+
+.word {
     font-size: 5rem;
 }
 
-.phonetic{
+.phonetic {
     font-size: 3rem;
     color: blueviolet;
 }
 
-.sound audio:focus{
+.sound audio:focus {
     outline: none;
 }
 
-.sound img{
+.sound img {
     width: 100%;
 }
 
-audio[controls]{opacity:1}
+audio[controls] {
+    opacity: 1
+}
 
+.error{
+    display: auto;
+    padding: 1rem;    
 
+    border-radius: 6px;
+    border: 1px red solid;
+
+    color: rgb(255, 0, 0);
+    font-size: 1.2rem;
+    font-weight: 700;
+}

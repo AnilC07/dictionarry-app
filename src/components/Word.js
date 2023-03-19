@@ -13,6 +13,11 @@ const Word = (props) => {
           </div>
           <div className={classes.sound}>
             <audio controls src={props.datas[0].phonetics[0].audio} />
+            {props.datas[0].phonetics[0].audio === "" && (
+              <div className={classes.error}>
+                <p className={classes.noAudio}>Audio unavailable.</p>{" "}
+              </div>
+            )}
           </div>
         </>
       ) : (
