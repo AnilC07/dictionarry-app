@@ -25,8 +25,8 @@ const Word = (props) => {
         </>
       ) : (
         <div>
-          <h1 className={classes.word}>???</h1>
-          <h3 className={classes.phonetic}>???</h3>
+          {/* <h1 className={classes.word}>???</h1>
+          <h3 className={classes.phonetic}>???</h3> */}
         </div>
       )}
     </section>
